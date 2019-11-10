@@ -15,6 +15,10 @@
 	}
 </style>
 
+<svelte:head>
+	<meta name="robots" content="noindex">
+</svelte:head>
+
 <Nav {segment}/>
 
 <main>
