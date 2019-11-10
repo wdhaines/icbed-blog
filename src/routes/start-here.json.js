@@ -1,8 +1,9 @@
-import client from '../_helpers/contentful-client.js'
+import client from './_helpers/contentful-client.js'
 
 export async function get(req, res) {
 	const entries = await client.getEntries({
 		'content_type': 'post',
+		'fields.categories.sys.id': 'category_4',
 		order: '-sys.createdAt'
 	})
 
@@ -16,6 +17,5 @@ export async function get(req, res) {
 	res.writeHead(200, {
 		'Content-Type': 'application/json'
 	})
-
 	res.end(contents)
 }
