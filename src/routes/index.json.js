@@ -9,7 +9,7 @@ export async function get(req, res) {
 	const contents = JSON.stringify(entries.items.map(post => {
 		return {
 			title: post.fields.title,
-			slug: post.fields.wordpress_url.replace('https://www.itcanbeeasilydone.com/','').slice(0, -1)
+			slug: post.fields.wordpress_url
 		}
 	}))
 

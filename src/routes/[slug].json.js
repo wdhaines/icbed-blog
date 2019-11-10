@@ -4,15 +4,21 @@ const lookup = new Map()
 export async function get(req, res, next) {
 	const { slug } = req.params;
 
-  const entries = await client.getEntries({
+  let entries = await client.getEntries({
 	  'content_type': 'post',
-    'fields.wordpress_url': 'https://www.itcanbeeasilydone.com/' + slug + '/',
+    'fields.wordpress_url': slug,
 	  order: '-sys.createdAt'
 	})
+	if (entries.items.length == 0) {
+		entries = await client.getEntries({
+			'content_type': 'page',
+			'fields.wordpress_url': slug,
+			order: '-sys.createdAt'
+		})
+	}
+	const fields = entries.items[0].fields
 
-	const post = entries.items[0]
-	const slugKey = post.fields.wordpress_url.replace('https://www.itcanbeeasilydone.com/','').slice(0, -1)
-  lookup.set(slugKey, JSON.stringify(post.fields))
+  lookup.set(fields.wordpress_url, JSON.stringify(fields))
 
 	if (lookup.has(slug)) {
 		res.writeHead(200, {
