@@ -3,7 +3,7 @@ import client from './_helpers/contentful-client.js'
 export async function get(req, res) {
 	const entries = await client.getEntries({
 		'content_type': 'post',
-		order: '-sys.createdAt'
+		order: '-fields.created_at'
 	})
 
 	const contents = JSON.stringify(entries.items.map(post => {

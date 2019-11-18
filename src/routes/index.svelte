@@ -12,6 +12,7 @@
 
 <svelte:head>
 	<title>It Can Be Easily Done | How to do the “right” thing… easily.</title>
+	<meta name="description" content="Actionable advice about how to do the “right” thing… better and with less stress.">
 </svelte:head>
 
 <h2>Actionable advice about how to do the “right” thing… better and with less stress.</h2>

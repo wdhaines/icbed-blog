@@ -15,18 +15,14 @@
 
 <script>
 	export let post
+	export let image = {file: {url: ''}, description: ''}
+	if (post.attachment) {
+		image = post.attachment.fields
+	}
 	import marked from 'marked'
 </script>
 
 <style>
-	/*
-		By default, CSS is locally scoped to the component,
-		and any unused styles are dead-code-eliminated.
-		In this page, Svelte can't know which elements are
-		going to appear inside the {{{post.html}}} block,
-		so we have to use the :global(...) modifier to target
-		all elements inside .content
-	*/
 	.content :global(h2) {
 		font-size: 1.4em;
 		font-weight: 500;
@@ -52,11 +48,19 @@
 	.content :global(li) {
 		margin: 0 0 0.5em 0;
 	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 </style>
 
 <svelte:head>
-	<title>{post.title}</title>
+	<title>{post.meta_title} | It Can Be Easily Done</title>
+	<meta name="description" content="{post.meta_description}" />
 </svelte:head>
+
+<img src="{image.file.url}" alt="{image.description}" width="1200" height="385">
 
 <h1>{post.title}</h1>
 

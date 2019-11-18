@@ -26,4 +26,4 @@
 	<slot></slot>
 </main>
 
-<Footer/>
+<Footer {segment}/>

@@ -58,8 +58,8 @@
 <footer>
 	<p>Copyright &copy; 2017–2019 Will Haines</p>
 	<ul>
-		<li><a class='{segment === "contact" ? "selected" : ""}' href='disclaimer'>Disclaimer</a></li>
-		<li><a class='{segment === "about" ? "selected" : ""}' href='privacy-policy'>Privacy Policy</a></li>
-		<li><a class='{segment === "start-here" ? "selected" : ""}' href='terms-of-service'>Terms of Service</a></li>
+		<li><a class='{segment === "disclaimer" ? "selected" : ""}' href='disclaimer'>Disclaimer</a></li>
+		<li><a class='{segment === "privacy-policy" ? "selected" : ""}' href='privacy-policy'>Privacy Policy</a></li>
+		<li><a class='{segment === "terms-of-service" ? "selected" : ""}' href='terms-of-service'>Terms of Service</a></li>
 	</ul>
 </footer>
