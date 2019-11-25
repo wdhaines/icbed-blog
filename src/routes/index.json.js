@@ -1,4 +1,4 @@
-import client from './_helpers/contentful-client.js'
+import client from 'contentful-client.js'
 
 export async function get(req, res) {
 	const entries = await client.getEntries({

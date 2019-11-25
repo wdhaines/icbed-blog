@@ -1,4 +1,4 @@
-import client from './_helpers/contentful-client.js'
+import client from 'contentful-client.js'
 const lookup = new Map()
 
 export async function get(req, res, next) {
