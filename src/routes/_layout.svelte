@@ -13,6 +13,9 @@
 		padding: 2em;
 		margin: 0 auto;
 		box-sizing: border-box;
+		clear: both;
+		margin: 0 auto;
+		max-width: 1200px;
 	}
 </style>
 

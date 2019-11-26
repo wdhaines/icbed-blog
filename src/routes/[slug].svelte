@@ -15,7 +15,7 @@
 
 <script>
 	export let post
-	export let image = {file: {url: ''}, description: ''}
+	export let image
 	if (post.attachment) {
 		image = post.attachment.fields
 	}
@@ -60,7 +60,9 @@
 	<meta name="description" content="{post.meta_description}" />
 </svelte:head>
 
-<img src="{image.file.url}" alt="{image.description}" width="1200" height="385">
+{#if image}
+	<img src="{image.file.url}" alt="{image.description}" width="1200" height="385">
+{/if}
 
 <h1>{post.title}</h1>
 
