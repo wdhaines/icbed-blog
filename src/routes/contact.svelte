@@ -29,6 +29,12 @@
 	}
 </script>
 
+<style>
+	input, textarea {
+		width: 80%;
+	}
+</style>
+
 <svelte:head>
 	<title>Get In Contact With Me | It Can Be Easily Done</title>
 	<meta name="description" content="Get in contact with Will at “It Can Be Easily Done” to learn how to do the “right” things and finish what you want to get done. I want to hear from you!" />

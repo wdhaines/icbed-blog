@@ -4,22 +4,13 @@
 
 <style>
 	footer {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
-		font-weight: 300;
-		padding: 0 1em;
-		background-color: #fff;
+		max-width: 1600px;
+		padding: 20px;
+		border-top: 1px solid rgba(255,62,0,0.1);
 		font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-		font-size: 12px;
-		line-height: 1.5;
+		font-size: 1.2rem;
 		letter-spacing: .08em;
-		margin-top: 70px;
-		font-weight: 500;
 		text-transform: uppercase;
-	}
-
-	div.wrap {
-		margin: 0 auto;
-		max-width: 1200px;
 	}
 
 	ul {
@@ -37,14 +28,14 @@
 
 	li, p {
 		display: block;
+		float: left;
+		margin-bottom: 0;
 	}
 
-	p {
-		float: left;
-	}
-
-	li {
-		float: left;
+	a {
+		text-decoration: none;
+		padding: 0 0.5rem;
+		display: block;
 	}
 
 	.selected {
@@ -61,21 +52,13 @@
 		display: block;
 		bottom: -1px;
 	}
-
-	a {
-		text-decoration: none;
-		padding: 1em 0.5em;
-		display: block;
-	}
 </style>
 
-<footer>
-	<div class="wrap">
-		<p>Copyright &copy; 2017–2019 Will Haines</p>
-		<ul>
-			<li><a class='{segment === "terms-of-service" ? "selected" : ""}' href='terms-of-service'>Terms of Service</a></li>
-			<li><a class='{segment === "privacy-policy" ? "selected" : ""}' href='privacy-policy'>Privacy Policy</a></li>
-			<li><a class='{segment === "disclaimer" ? "selected" : ""}' href='disclaimer'>Disclaimer</a></li>
-		</ul>
-	</div>
+<footer class="container">
+	<p>Copyright &copy; 2017–2019 Will Haines</p>
+	<ul>
+		<li><a class='{segment === "terms-of-service" ? "selected" : ""}' href='terms-of-service'>Terms of Service</a></li>
+		<li><a class='{segment === "privacy-policy" ? "selected" : ""}' href='privacy-policy'>Privacy Policy</a></li>
+		<li><a class='{segment === "disclaimer" ? "selected" : ""}' href='disclaimer'>Disclaimer</a></li>
+	</ul>
 </footer>
