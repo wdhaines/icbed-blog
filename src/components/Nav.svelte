@@ -103,6 +103,16 @@
     max-width: 300px;
     padding: 0;
 	}
+
+	@media only screen and (max-width: 600px) {
+		nav {
+			min-height: 120px;
+		}
+
+	  ul {
+	    float: left;
+	  }
+	}
 </style>
 
 <nav>

@@ -14,6 +14,8 @@
 </script>
 
 <script>
+	import Signup from '../components/Signup.svelte'
+
 	export let post
 	export let image
 	if (post.attachment) {
@@ -52,6 +54,7 @@
 	img {
 		max-width: 100%;
 		height: auto;
+		margin-bottom: 20px;
 	}
 </style>
 
@@ -63,6 +66,8 @@
 {#if image}
 	<img src="{image.file.url}" alt="{image.description}" width="1200" height="385">
 {/if}
+
+<Signup />
 
 <h1>{post.title}</h1>
 

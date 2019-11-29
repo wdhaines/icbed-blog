@@ -7,6 +7,8 @@
 </script>
 
 <script>
+	import Signup from '../components/Signup.svelte'
+
 	export let posts
 </script>
 
@@ -14,6 +16,8 @@
 	<title>It Can Be Easily Done | How to do the “right” thing… easily.</title>
 	<meta name="description" content="Actionable advice about how to do the “right” thing… better and with less stress.">
 </svelte:head>
+
+<Signup/>
 
 <h2>Actionable advice about how to do the “right” thing… better and with less stress.</h2>
 
