@@ -6,7 +6,11 @@
 		const data = await res.json()
 
 		if (res.status === 200) {
-			return { post: data }
+			if (data.attachment) {
+				return { post: data, image: data.attachment.fields }
+			} else {
+				return { post: data, image: null }
+			}
 		} else {
 			this.error(res.status, data.message)
 		}
@@ -16,9 +20,7 @@
 <script>
 	export let post
 	export let image
-	if (post.attachment) {
-		image = post.attachment.fields
-	}
+
 	import marked from 'marked'
 </script>
 
