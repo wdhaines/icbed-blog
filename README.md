@@ -14,6 +14,12 @@ npm install
 npm run dev
 ```
 
+## Running tests
+
+```bash
+npm test
+```
+
 ## Exporting the static version
 
 ```bash
