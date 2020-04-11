@@ -55,7 +55,7 @@
 </style>
 
 <footer class="container">
-	<p>Copyright &copy; 2017–2019 Will Haines</p>
+	<p>Copyright &copy; 2017–2020 Will Haines</p>
 	<ul>
 		<li><a class='{segment === "terms-of-service" ? "selected" : ""}' href='terms-of-service'>Terms of Service</a></li>
 		<li><a class='{segment === "privacy-policy" ? "selected" : ""}' href='privacy-policy'>Privacy Policy</a></li>
