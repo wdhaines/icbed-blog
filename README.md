@@ -19,14 +19,3 @@ npm run dev
 ```bash
 npm test
 ```
-
-## Exporting the static version
-
-```bash
-npx sapper export
-```
-## Deploying to Zeit
-
-```bash
-now --prod -e SAPPER_TIMESTAMP=$(date +%s%3N)
-```
