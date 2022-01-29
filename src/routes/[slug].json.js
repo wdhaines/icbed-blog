@@ -16,9 +16,11 @@ export async function get({params}) {
 			order: '-sys.createdAt'
 		})
 	}
-	const fields = entries.items[0].fields
 
-	lookup.set(fields.wordpress_url, fields)
+	if (entries.items[0]) {
+		const fields = entries.items[0].fields
+		lookup.set(fields.wordpress_url, fields)
+	} 
 
 	if (lookup.has(slug)) {
 		return {
