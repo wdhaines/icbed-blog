@@ -1,14 +1,14 @@
-import client from 'contentful-client.js'
+import client from '$lib/contentful-client.js'
 const lookup = new Map()
 
-export async function get(req, res, next) {
-	const { slug } = req.params;
+export async function get({params}) {
+	const { slug } = params;
 
-  let entries = await client.getEntries({
-	  'content_type': 'post',
-    'fields.wordpress_url': slug,
-	  order: '-sys.createdAt'
-	})
+	let entries = await client.getEntries({
+		'content_type': 'post',
+		'fields.wordpress_url': slug,
+		order: '-sys.createdAt'
+		})
 	if (entries.items.length == 0) {
 		entries = await client.getEntries({
 			'content_type': 'page',
@@ -18,21 +18,16 @@ export async function get(req, res, next) {
 	}
 	const fields = entries.items[0].fields
 
-  lookup.set(fields.wordpress_url, JSON.stringify(fields))
+	lookup.set(fields.wordpress_url, fields)
 
 	if (lookup.has(slug)) {
-		res.writeHead(200, {
-			'Content-Type': 'application/json'
-		})
-
-		res.end(lookup.get(slug));
+		return {
+			body: lookup.get(slug) 
+		}
 	} else {
-		res.writeHead(404, {
-			'Content-Type': 'application/json'
-		})
-
-		res.end(JSON.stringify({
-			message: `Not found`
-		}))
+		return {
+			status: 404,
+			error: new Error(`Not found`)
+		}
 	}
 }

@@ -1,7 +1,11 @@
 <script context="module">
-	export function preload({ params, query }) {
-		return this.fetch(`index.json`).then(r => r.json()).then(posts => {
-			return { posts }
+	export async function load({ fetch }) {
+		return fetch(`index.json`).then(r => r.json()).then(posts => { 
+			return { 
+				props: {
+					posts
+				}
+			}
 		})
 	}
 </script>

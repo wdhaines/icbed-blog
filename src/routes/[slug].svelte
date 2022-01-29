@@ -1,27 +1,37 @@
 <script context="module">
-	export async function preload({ params, query }) {
-		// the `slug` parameter is available because
-		// this file is called [slug].svelte
-		const res = await this.fetch(`${params.slug}.json`)
+	export async function load({ fetch, params }) {
+		const res = await fetch(`${params.slug}.json`)
 		const data = await res.json()
 
-		if (res.status === 200) {
+		if (res.ok) {
 			if (data.attachment) {
-				return { post: data, image: data.attachment.fields }
+				return { 
+					props: {
+						post: data, 
+						image: data.attachment.fields 
+					}
+				}
 			} else {
-				return { post: data, image: null }
+				return { 
+					props: {
+						post: data, 
+						image: null 
+					}
+				}
 			}
 		} else {
-			this.error(res.status, data.message)
+			return {
+				status: res.status,
+				error: new Error(data.message)
+			}
 		}
 	}
 </script>
 
 <script>
+	import { marked } from 'marked'
 	export let post
 	export let image
-
-	import marked from 'marked'
 </script>
 
 <style>

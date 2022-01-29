@@ -1,5 +1,5 @@
 <script>
-	import { post, validateEmail } from 'utils.js';
+	import { post, validateEmail } from '$lib/utils.js';
 
 	let _replyto = ''
 	let name = ''

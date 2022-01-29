@@ -1,3 +1,13 @@
+
+<script context="module">
+	/** @type {import('../../../../../types').ErrorLoad} */
+	export function load({ status, error }) {
+		return {
+			props: { status, error }
+		};
+	}
+</script>
+
 <script>
 	export let status;
 	export let error;
