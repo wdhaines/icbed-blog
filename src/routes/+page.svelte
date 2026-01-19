@@ -1,17 +1,6 @@
-<script context="module">
-	export async function load({ fetch }) {
-		return fetch(`index.json`).then(r => r.json()).then(posts => { 
-			return { 
-				props: {
-					posts
-				}
-			}
-		})
-	}
-</script>
-
 <script>
-	export let posts
+	export let data;
+	$: posts = data.posts;
 </script>
 
 <svelte:head>
