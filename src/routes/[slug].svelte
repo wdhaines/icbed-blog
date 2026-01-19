@@ -30,8 +30,11 @@
 
 <script>
 	import { marked } from 'marked'
+	import DOMPurify from 'isomorphic-dompurify'
 	export let post
 	export let image
+
+	$: sanitizedContent = DOMPurify.sanitize(marked(post.content))
 </script>
 
 <style>
@@ -54,5 +57,5 @@
 <h1>{post.title}</h1>
 
 <div class='content'>
-	{@html marked(post.content)}
+	{@html sanitizedContent}
 </div>
