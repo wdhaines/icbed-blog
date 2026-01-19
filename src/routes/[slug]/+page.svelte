@@ -1,0 +1,33 @@
+<script>
+	import { marked } from 'marked';
+	import DOMPurify from 'isomorphic-dompurify';
+
+	export let data;
+
+	$: post = data.post;
+	$: image = data.image;
+	$: sanitizedContent = DOMPurify.sanitize(marked(post.content));
+</script>
+
+<style>
+	img {
+		max-width: 100%;
+		height: auto;
+		margin-bottom: 20px;
+	}
+</style>
+
+<svelte:head>
+	<title>{post.meta_title} | It Can Be Easily Done</title>
+	<meta name="description" content="{post.meta_description}" />
+</svelte:head>
+
+{#if image}
+	<img src="{image.file.url}" alt="{image.description}" width="1200" height="385">
+{/if}
+
+<h1>{post.title}</h1>
+
+<div class='content'>
+	{@html sanitizedContent}
+</div>
