@@ -26,6 +26,7 @@
     "vite-imagetools": "^9.0.2"
   },
   "overrides": {
-    "cookie": "^0.7.0"
+    "cookie": "^0.7.0",
+    "tar": "^7.5.6"
   }
 }
