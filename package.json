@@ -29,6 +29,7 @@
     "vite": "^8.2.0",
     "minimatch": "^10.2.6",
     "postcss": "^8.5.25",
+    "qs": "^6.16.0",
     "@isaacs/brace-expansion": "^5.0.1",
     "axios": "^1.19.0",
     "cookie": "^1.1.1",
