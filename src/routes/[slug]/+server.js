@@ -1,5 +1,5 @@
 import { json, error } from '@sveltejs/kit';
-import client from '$lib/contentful-client.js';
+import client from '#lib/contentful-client.js';
 
 const lookup = new Map();
 

@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import client from '$lib/contentful-client.js';
+import client from '#lib/contentful-client.js';
 
 export async function GET() {
 	const entries = await client.getEntries({
