@@ -5,7 +5,10 @@ export function post(endpoint, data) {
 		headers: {
 			'Content-Type': 'application/json'
 		}
-	}).then(r => r.json());
+	}).then(r => {
+		if (!r.ok) throw new Error(`Request failed: ${r.status}`);
+		return r.json();
+	});
 }
 
 export function validateEmail(email) {

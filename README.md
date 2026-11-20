@@ -1,6 +1,6 @@
 # icbed-blog
 
-The “It Can Be Easily Done” blog based on [Sapper](https://github.com/sveltejs/sapper).
+The “It Can Be Easily Done” blog built with [SvelteKit](https://svelte.dev/docs/kit) and deployed on Vercel.
 
 ## Installing the project
 

@@ -1,4 +1,4 @@
-describe('Sapper template app', () => {
+describe('Site navigation', () => {
 	beforeEach(() => {
 		cy.visit('/')
 	})

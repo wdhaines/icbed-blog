@@ -1,6 +1,6 @@
 {
   "name": "it-can-be-easily-done-blog",
-  "description": "TODO",
+  "description": "The “It Can Be Easily Done” blog",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
