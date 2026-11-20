@@ -17,5 +17,8 @@ npm run dev
 ## Running tests
 
 ```bash
+npx playwright install chromium   # first time only
 npm test
 ```
+
+The tests are [Playwright](https://playwright.dev) end-to-end tests in `e2e/`; `npm test` starts the dev server for you. The `/about` and `/start-here` checks need the Contentful environment variables (`VITE_CTF_SPACE_ID`, `VITE_CDA_ACCESS_TOKEN`).

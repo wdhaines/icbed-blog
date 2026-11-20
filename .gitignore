@@ -1,7 +1,8 @@
 .DS_Store
 /node_modules/
 yarn-error.log
-/cypress/screenshots/
+/test-results/
+/playwright-report/
 .svelte-kit
 .vercel_build_output
 .env.local
