@@ -8,24 +8,25 @@
 	let errors = []
 	let success = false
 
-	async function submit(event) {
+	async function submit() {
 		errors = []
 		if (!validateEmail(_replyto)) {
-			errors.push('Please enter a valid email address.');
+			errors = [...errors, 'Please enter a valid email address.']
 		}
 		if (!message) {
-			errors.push('Message is required.')
+			errors = [...errors, 'Message is required.']
 		}
 		if (errors.length > 0) {
 			return
 		}
-		const response = await post('https://formspree.io/maynwngp',
-			{ _replyto, name, subject, message })
-		if (!response.error) {
+		try {
+			const response = await post('https://formspree.io/maynwngp',
+				{ _replyto, name, subject, message })
+			if (response.error) throw new Error(response.error)
 			success = true
-    } else {
-			errors.push('Something went wrong. Please try again.')
-    }
+		} catch (e) {
+			errors = ['Something went wrong. Please try again.']
+		}
 	}
 </script>
 
